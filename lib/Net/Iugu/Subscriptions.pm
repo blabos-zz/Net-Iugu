@@ -32,7 +32,7 @@ sub add_credits {
 
     my $uri = $self->endpoint . '/' . $sub_id . '/add_credits';
 
-    return $self->request( POST => $uri, { quantity => $quantity } );
+    return $self->request( PUT => $uri, { quantity => $quantity } );
 }
 
 sub remove_credits {
@@ -40,7 +40,7 @@ sub remove_credits {
 
     my $uri = $self->endpoint . '/' . $sub_id . '/remove_credits';
 
-    return $self->request( POST => $uri, { quantity => $quantity } );
+    return $self->request( PUT => $uri, { quantity => $quantity } );
 }
 
 1;

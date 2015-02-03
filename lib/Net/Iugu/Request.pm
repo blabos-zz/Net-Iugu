@@ -31,11 +31,7 @@ has 'endpoint' => (
     builder => sub {
         my ($self) = @_;
 
-        my $endpoint = $self->base_uri;
-        $endpoint .= '/' . $self->object
-          if $self->object;
-
-        return $endpoint;
+        return $self->base_uri . '/' . $self->object;
     },
 );
 
@@ -51,7 +47,7 @@ has 'headers' => (
     builder => sub {
         my ($self) = @_;
 
-        my $auth = 'Basic ' . encode_base64( $self->token . ':' );
+        my $auth = 'Basic ' . encode_base64( $self->token . ':', '' );
 
         return HTTP::Headers->new(
             'Authorization' => $auth,

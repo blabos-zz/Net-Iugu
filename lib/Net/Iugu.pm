@@ -76,3 +76,5 @@ sub charge {
 
 1;
 
+# ABSTRACT: Perl modules for integration with Iugu payment web services
+
