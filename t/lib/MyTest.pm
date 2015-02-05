@@ -53,6 +53,8 @@ sub _call_subtest {
         my ($request_data) = grep { ref $_ eq 'HASH' } @{ $test->{args} };
         is_deeply( $data, $request_data, 'Checking data' );
     }
+
+    $override->restore('LWP::UserAgent::request');
 }
 
 1;
