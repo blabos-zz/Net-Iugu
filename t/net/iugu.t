@@ -4,9 +4,10 @@ use Test::Most;
 use Sub::Override;
 
 use HTTP::Message;
-use JSON;
 
 use Net::Iugu;
+
+use JSON qw{ from_json to_json };
 
 ## Setup
 my $override = Sub::Override->new;

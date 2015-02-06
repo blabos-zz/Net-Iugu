@@ -4,6 +4,7 @@ requires 'HTTP::Message'     => '6.06';
 requires 'MIME::Base64'      => '3.15';
 requires 'String::CamelCase' => '0.02';
 requires 'File::Slurp'       => '9999.19';
+requires 'File::LibMagic'    => '1.10';
 
 on 'test' => sub {
     requires 'Test::Most'    => '0.34';

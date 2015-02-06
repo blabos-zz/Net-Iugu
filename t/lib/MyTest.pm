@@ -9,7 +9,8 @@ use Test::Most;
 use Sub::Override;
 
 use HTTP::Message;
-use JSON;
+
+use JSON qw{ from_json };
 
 my $override = Sub::Override->new;
 
