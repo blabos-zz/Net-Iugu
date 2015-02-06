@@ -9,7 +9,8 @@ use Test::Most;
 use Sub::Override;
 
 use HTTP::Message;
-use JSON;
+
+use JSON qw{ from_json };
 
 my $override = Sub::Override->new;
 
@@ -53,6 +54,8 @@ sub _call_subtest {
         my ($request_data) = grep { ref $_ eq 'HASH' } @{ $test->{args} };
         is_deeply( $data, $request_data, 'Checking data' );
     }
+
+    $override->restore('LWP::UserAgent::request');
 }
 
 1;
